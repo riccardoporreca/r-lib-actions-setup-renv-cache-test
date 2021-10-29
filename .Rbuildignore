@@ -2,3 +2,4 @@
 ^renv\.lock$
 ^r-lib-actions-setup-renv-cache-test\.Rproj$
 ^\.Rproj\.user$
+^\.github$
