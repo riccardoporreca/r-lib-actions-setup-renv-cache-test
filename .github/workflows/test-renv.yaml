@@ -11,7 +11,8 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-      - run: |
+      - id: renv-lock
+        run: |
           const fs = require("fs");
           fs.readFile("./renv.lock", "utf8", (err, data) => {
             if (err) {
@@ -25,4 +26,6 @@ jobs:
           })
         shell: node {0}
       - uses: r-lib/actions/setup-r@v1
+        with:
+          r-version: steps.renv-lock.r-version
       - uses: r-lib/actions/setup-renv@master
