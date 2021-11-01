@@ -18,6 +18,7 @@ jobs:
               console.log("File read failed:", err);
               return;
             }
+          }
           console.log("File data:", jsonString);
           renv_lock = JSON.parse(jsonString);
           console.log(renv_lock);
