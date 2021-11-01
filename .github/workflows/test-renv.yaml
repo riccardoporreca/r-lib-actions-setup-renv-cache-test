@@ -13,13 +13,13 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           const fs = require("fs");
-          fs.readFile("./customer.json", "utf8", (err, jsonString) => {
+          fs.readFile("./renv.lock", "utf8", (err, data) => {
             if (err) {
               console.log("File read failed:", err);
               return;
             }
-            console.log("File data:", jsonString);
-            renv_lock = JSON.parse(jsonString);
+            console.log("File data:", data);
+            renv_lock = JSON.parse(data);
             console.log(renv_lock);
           })
         shell: node {0}
