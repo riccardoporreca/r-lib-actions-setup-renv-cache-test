@@ -18,10 +18,10 @@ jobs:
               console.log("File read failed:", err);
               return;
             }
+            console.log("File data:", jsonString);
+            renv_lock = JSON.parse(jsonString);
+            console.log(renv_lock);
           })
-          console.log("File data:", jsonString);
-          renv_lock = JSON.parse(jsonString);
-          console.log(renv_lock);
         shell: node {0}
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-renv@master
