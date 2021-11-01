@@ -11,5 +11,8 @@ jobs:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
+      - run: |
+         console.log("hello world")
+        shell: node {0}
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-renv@master
