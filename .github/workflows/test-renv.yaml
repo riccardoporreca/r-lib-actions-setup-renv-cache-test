@@ -20,7 +20,7 @@ jobs:
             }
             console.log("File data:", data);
             renv_lock = JSON.parse(data);
-            console.log(renv_lock);
+            console.log(renv_lock.R.Version);
           })
         shell: node {0}
       - uses: r-lib/actions/setup-r@v1
