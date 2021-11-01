@@ -28,8 +28,8 @@ jobs:
         shell: node {0}
       - id: renv-lock
         run: |
-          import { readFileSync } from 'fs';
-          renv_lock = JSON.parse(readFileSync('./renv.lock')),
+          const fs = require('fs');
+          renv_lock = JSON.parse(fs.readFileSync('./renv.lock')),
           console.log('R version in the lockfile: ' + renv_lock.R.Version);
           console.log('::set-output name=r-version::' + renv_lock.R.Version);
         shell: node {0}
