@@ -12,7 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-         console.log("hello world")
+          renv_lock = require('renv.lock')
+          console.log(renv_lock)
         shell: node {0}
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-renv@master
