@@ -42,6 +42,7 @@ jobs:
           })
         shell: node {0}
       - uses: r-lib/actions/setup-r@v1
+        name: Install R ${{ steps.renv-lock.outputs.r-version }}
         with:
           r-version: ${{ steps.renv-lock.outputs.r-version }}
       - uses: r-lib/actions/setup-renv@master
