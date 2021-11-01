@@ -41,10 +41,7 @@ jobs:
             console.log("::set-output name={r-version}::" + renv_lock.R.Version);
           })
         shell: node {0}
-      - run: |
-          echo ${{ toJSON(steps.renv-lock) }}"
-          echo "steps.renv-lock.r-version: ${{ steps.renv-lock.r-version }}"
       - uses: r-lib/actions/setup-r@v1
         with:
-          r-version: ${{ steps.renv-lock.r-version }}
+          r-version: ${{ steps.renv-lock.outputs.r-version }}
       - uses: r-lib/actions/setup-renv@master
