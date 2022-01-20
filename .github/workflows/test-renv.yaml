@@ -32,9 +32,10 @@ jobs:
           renv_lock = JSON.parse(fs.readFileSync('./renv.lock')),
           console.log('R version in the lockfile: ' + renv_lock.R.Version);
           console.log('::set-output name=r-version::' + renv_lock.R.Version);
-      - shell: node {0}
-        run: |
+        shell: node {0}
+      - run: |
           const cache = require('@actions/cache');
+        shell: node {0}
       - uses: r-lib/actions/setup-r@v1
         name: Install R ${{ steps.renv-lock.outputs.r-version }}
         with:
