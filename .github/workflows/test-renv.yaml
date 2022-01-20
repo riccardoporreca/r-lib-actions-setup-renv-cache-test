@@ -35,7 +35,9 @@ jobs:
         shell: node {0}
       - run: |
           npm install @actions/cache --loglevel verbose --global
-          node -e "const cache = require('@actions/cache');"
+          pwd
+          ls -la
+          ls -la ~
       - run: |
           node -e "const cache = require('@actions/cache');"
       - run: |
