@@ -40,6 +40,9 @@ jobs:
           ls -la ~
           ls -la ~/.npm
       - run: |
+          npm list -g
+          npm list
+      - run: |
           node -e "const cache = require('@actions/cache');"
       - run: |
           const cache = require('@actions/cache');
