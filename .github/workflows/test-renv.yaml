@@ -46,7 +46,7 @@ jobs:
       
           npm list -g
           npm list
-          ls -laR /usr/local/lib/node_modules
+          ls -laR /usr/local/lib/node_modules/@actions
           
       - run: |
           const cache = require('/usr/local/lib/node_modules@actions/cache');
